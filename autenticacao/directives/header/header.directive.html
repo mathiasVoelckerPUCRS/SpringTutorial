@@ -1,0 +1,29 @@
+<nav class="my-navbar navbar navbar-inverse navbar-fixed-top">
+  <div class="my-navbar-title">
+    <div class="col-lg-3 col-md-3">
+      <span class="title">MusicBook</span>
+    </div>
+    <div class="title-message col-lg-6 col-md-6">
+      <span>“We believed that anything that was worth doing was worth overdoing.”</span>
+      <span>Steven Tyler - 1990</span>
+    </div>
+    <div ng-if="estaLogado()" class="title-usuario">
+      <span class="glyphicon glyphicon-user"></span>
+      <span>{{usuarioLogado.login}}</span>
+    </div>
+
+  </div>
+  <div class="my-navbar-content">
+    <div id="navbar" class="collapse navbar-collapse">
+      <ul class="nav navbar-nav my-navbar-items">
+        <li ng-if="!estaLogado()"><a href="/#!/login">Login</a></li>
+        <li ng-if="!estaLogado()"><a href="/#!/cadastro">Cadastro</a></li>
+        <li ng-if="estaLogado()"><a href="/#!/">Menu</a></li>
+        <li ng-if="estaLogado()"><a href="/#!/contatos">Buscar Contatos</a></li>
+        <li ng-if="estaLogado()"><a href="/#!/amigos">Buscar Amigos</a></li>
+        <li ng-if="estaLogado()"><a href="/#!/banda">Sua Banda</a></li>
+        <li ng-if="estaLogado()"><a ng-click="logout()">Sair</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>

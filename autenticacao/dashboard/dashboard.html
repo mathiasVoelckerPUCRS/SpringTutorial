@@ -1,0 +1,102 @@
+<div class="row">
+  <!-- PERFIL -->
+  <div class="col-lg-4 col-md-6 perfil-usuario-basic">
+    <div class="main-body">
+      <div class="flex-row">
+        <img src="{{usuario.url_imagem_perfil}}" class="foto-perfil" />
+        <div class="flex-column" style="justify-content: center;">
+          <span class="nome-perfil">{{usuario.login}}</span>
+          <a class="btn btn-primary" href="#!/cadastro/{{usuario.id}}">Editar Usuario</a>
+        </div>
+      </div>
+      <div class="competencias-perfil">
+        <h3>{{usuario.login}} sabe tocar...</h3>
+        <ul ng-repeat="competencia in competencias">
+          <li class="competencia">
+              <span>{{competencia.instrumento.descricao}} há {{competencia.anos_pratica}} anos</span>
+              <span>Nível {{competencia.nivel}}</span>
+          </li>
+        </ul>
+      </div>
+      <div class="descricao-perfil">
+        <h3>Sobre {{usuario.login}}</h3>
+        <span> {{usuario.descricao}}</span>
+        <div>
+          <div class="col-md-3">
+            <h4>Nome Completo</h4>
+            <span>{{usuario.nome_completo}}</span>
+          </div>
+          <div class="col-md-5">
+            <h4>Email</h4>
+            <span>{{usuario.email}}</span>
+          </div>
+          <div class="col-md-4">
+            <h4>Data de Nascimento</h4>
+            <span>{{usuario.data_nascimento}}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- COMPETENCIA -->
+    <div class="main-body">
+      <h3>Eu sei tocar...</h3>
+      <form novalidate name="formCompetencia" ng-submit="cadastrarCompetencia(competencia)">
+        <div class="col-sm-12 form-group">
+          <label for="competencia.instrumento_id">Instrumento</label>
+          <select ng-init="1" ng-model="competencia.id_instrumento" type="text" class="form-control" name="competencia.id_instrumento">
+            <option ng-repeat="instrumento in instrumentos" value="{{instrumento.id}}">
+              {{instrumento.descricao}}
+            </option>
+          </select>
+        </div>
+        <div class="col-sm-6 form-group">
+          <label for="competencia.nivel">Anos Prática</label>
+          <input ng-model="competencia.anos_pratica" type="number" class="form-control" name="competencia.nivel" required>
+        </div>
+        <div class="col-sm-6 form-group">
+          <label for="competencia.anos_pratica">Nivel</label>
+          <select ng-model="competencia.nivel" type="text" class="form-control" name="competencia.anos_pratica" required>
+            <option>Iniciante</option>
+            <option>Intermediário</option>
+            <option>Bom</option>
+            <option>Profi</option>
+            <option>Mito</option>
+          </select>
+        </div>
+        <button class="btn btn-primary">Criar Competência</button>
+      </form>
+    </div>
+    <!-- SOLICITACOES DE AMIZADES -->
+    <div class="main-body">
+      <h3>Solicitacoes de amizade</h3>
+      <ul ng-repeat="solicitacao in solicitacoes">
+        <li class="solicitacao">
+          <div>
+            <img src="{{solicitacao.url_imagem_perfil}}" class="foto-solicitacao"/>
+            {{solicitacao.login}}
+          </div>
+          <button class="btn btn-primary" ng-click="aprovarSolicitacao(solicitacao.id)" >Aceitar Amizade</button>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <!-- POSTAGENS -->
+    <div class="col-lg-4 col-md-4 postagens-basic">
+    <form class="postagem-form" novalidate name="formCadastro" ng-submit="cadastrarPostagem(postagem)">
+      <span for="descricao">Postagens</span>
+      <textarea ng-model="postagem.descricao" type="text" class="form-control postagem-textarea" name="descricao" placeholder="O que voce esta pensando..."></textarea>
+      <button class="btn btn-success">Postar</button>
+      <label for="publico">Postagem publica</label>
+      <input id="publico" name="publico" ng-model="postagem.publico" type="checkbox"/>
+    </form>
+    <div ng-repeat="postagemFeed in postagens">
+      <postagem post="postagemFeed">
+      </postagem>
+    </div>
+    <div class="flex-row" style="justify-content:center">
+      <span class="glyphicon glyphicon-chevron-left page-icon" ng-click="buscarPostagensPaginaAnterior(usuario.id)" ng-if="!conferirPrimeiraPagina()"></span>
+      <span class="glyphicon glyphicon-chevron-right page-icon" ng-click="buscarPostagensProximaPagina(usuario.id)" ng-if="!conferirUltimaPagina()"></span>
+    </div>
+  </div>
+
+</div>

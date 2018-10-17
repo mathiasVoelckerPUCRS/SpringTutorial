@@ -1,0 +1,65 @@
+<div class="row">
+  <!-- PERFIL -->
+  <div class="col-lg-4 col-md-6 perfil-usuario-basic">
+    <div class="main-body">
+      <div class="flex-row">
+        <img src="{{usuario.url_imagem_perfil}}" class="foto-perfil" />
+        <div class="flex-column" style="justify-content: center;">
+          <span class="nome-perfil">{{usuario.login}}</span>
+        </div>
+      </div>
+      <div class="competencias-perfil">
+        <h3>{{usuario.login}} sabe tocar...</h3>
+        <ul ng-repeat="competencia in competencias">
+          <li class="competencia">
+              <span>{{competencia.instrumento.descricao}} há {{competencia.anos_pratica}} anos</span>
+              <span>Nível {{competencia.nivel}}</span>
+          </li>
+        </ul>
+      </div>
+      <div class="descricao-perfil">
+        <h3>Sobre {{usuario.login}}</h3>
+        <span> {{usuario.descricao}}</span>
+        <div>
+          <div class="col-md-3">
+            <h4>Nome Completo</h4>
+            <span>{{usuario.nome_completo}}</span>
+          </div>
+          <div class="col-md-5">
+            <h4>Email</h4>
+            <span>{{usuario.email}}</span>
+          </div>
+          <div class="col-md-4">
+            <h4>Data de Nascimento</h4>
+            <span>{{usuario.data_nascimento}}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-12 col-md-12 flex-row" style="justify-content: center;">
+      <div ng-if="!proprioUsuario">
+        <div ng-if="!aguardandoResposta && !aguardandoAprovacao">
+          <button class="btn btn-danger" ng-if="isAmigo" ng-click="desfazerAmizade()">Desfazer Amizade</button>
+          <button class="btn btn-primary" ng-if="!isAmigo" ng-click="enviarSolicitacao()">Adicionar como Amigo</button>
+        </div>
+        <span class="contatos-body-message" ng-if="aguardandoResposta">Aguardando Resposta...</span>
+        <button class="btn btn-success" ng-if="aguardandoAprovacao" ng-click="aprovarSolicitacao()" >Aceitar Amizade</button>
+      </div>
+    </div>
+  </div>
+  <!-- POSTAGENS -->
+  <div class="col-lg-4 col-md-4 postagens-basic">
+    <div class="postagem-form">
+      <span for="descricao">Postagens de {{usuario.login}}</span>
+    </div>
+    <div ng-repeat="postagemFeed in postagens">
+      <postagem post="postagemFeed">
+      </postagem>
+    </div>
+    <div class="flex-row" style="justify-content:center">
+      <span class="glyphicon glyphicon-chevron-left page-icon" ng-click="buscarPostagensPaginaAnterior(usuario.id)" ng-if="!conferirPrimeiraPagina()"></span>
+      <span class="glyphicon glyphicon-chevron-right page-icon" ng-click="buscarPostagensProximaPagina(usuario.id)" ng-if="!conferirUltimaPagina()"></span>
+    </div>
+  </div>
+
+</div>

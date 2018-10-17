@@ -1,0 +1,40 @@
+.contatos-filtro{
+  margin: 20px;
+}
+
+.contatos-filtro > h2 {
+  font-size: 30px;
+  color: #e2e1da;
+  font-family: 'Raleway', sans-serif;
+  font-weight: bolder;
+  text-shadow: 1px 1px #085764;
+}
+
+.contato-body{
+  background-color: white;
+  margin: 40px 20px;
+  padding: 20px;
+  border-radius: 20px;
+  border: 2px solid #e2e1da;
+}
+
+.contatos-body-message{
+  color: #085764;
+  font-family: 'Raleway', sans-serif;
+  font-weight: bolder;
+  text-shadow: 1px 1px #e2e1da;
+}
+
+.link-usuario-perfil{
+  color: #085764;
+  font-family: 'Raleway', sans-serif;
+  font-weight: bolder;
+  /*text-shadow: 1px 1px #e2e1da;*/
+}
+
+.link-usuario-perfil:hover{
+  color: #085764;
+  font-style: italic;
+  text-shadow: 1px 1px #e2e1da;
+  cursor:pointer;
+}

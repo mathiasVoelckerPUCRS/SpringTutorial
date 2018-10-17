@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Autenticação</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link href="style/main.css" rel="stylesheet">
+  <link href="style/forms.css" rel="stylesheet">
+  <link href="style/dashboard.css" rel="stylesheet">
+  <link href="style/post.css" rel="stylesheet">
+  <link href="style/contatos.css" rel="stylesheet">
+  <link href="style/banda.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Dancing+Script" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+</head>
+
+<body ng-app="app">
+  <cwi-header></cwi-header>
+  <div class="">
+    <div class="content">
+      <div class="row">
+        <!-- Rotas -->
+        <ng-view></ng-view>
+      </div>
+    </div>
+  </div>
+</body>
+
+<!-- Angular, Rotas, Local Storage (Módulo 'auth' depende dele) -->
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.js" type="text/javascript"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.min.js" type="text/javascript"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ngStorage/0.3.6/ngStorage.min.js" type="text/javascript"></script>
+
+<!-- Autenticação -->
+<script src="auth/auth.module.js" type="text/javascript"></script>
+
+<!-- Aplicação -->
+<script src="app.module.js" type="text/javascript"></script>
+<script src="app.route.js" type="text/javascript"></script>
+<!-- Controller -->
+<script src="home/home.controller.js" type="text/javascript"></script>
+<script src="login/login.controller.js" type="text/javascript"></script>
+<script src="cadastro/cadastro.controller.js" type="text/javascript"></script>
+<script src="dashboard/dashboard.controller.js" type="text/javascript"></script>
+<script src="contatos/contatos.controller.js" type="text/javascript"></script>
+<script src="privado/privado.controller.js" type="text/javascript"></script>
+<script src="amigos/amigos.controller.js" type="text/javascript"></script>
+<script src="perfil/perfil.controller.js" type="text/javascript"></script>
+<script src="banda/banda.controller.js" type="text/javascript"></script>
+<!-- Diretiva -->
+<script src="directives/header/header.directive.js" type="text/javascript"></script>
+<script src="directives/postagem/postagem.directive.js" type="text/javascript"></script>
+<script src="directives/contato/contato.directive.js" type="text/javascript"></script>
+<script src="directives/amigo/amigo.directive.js" type="text/javascript"></script>
+<script src="directives/banda/banda.directive.js" type="text/javascript"></script>
+<!-- Services -->
+<script src="auth/usuario.module.js" type="text/javascript"></script>
+<script src="auth/postagem.module.js" type="text/javascript"></script>
+<script src="auth/competencia.module.js" type="text/javascript"></script>
+<script src="auth/banda.module.js" type="text/javascript"></script>
+
+</html>

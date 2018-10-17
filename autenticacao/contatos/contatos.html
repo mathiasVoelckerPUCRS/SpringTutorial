@@ -1,0 +1,19 @@
+<div class="contatos-filtro col-lg-12 col-md-12">
+  <div class="col-lg-4 col-md-4">
+    <form class="postagem-form" novalidate name="formCadastro">
+      <span for="busca">Contatos</span>
+      <input ng-model="busca" type="text" class="form-control" name="busca" placeholder="O que voce esta pensando..."/>
+      <button type="submit" class="btn btn-primary"  ng-click="buscarPorLogin(busca)">Buscar por Nome</button>
+      <button class="btn btn-info" ng-click="buscarPorEmail(busca)">Buscar por Email</button>
+      <button class="btn btn-success" ng-click="buscarUsuarios()">Mostrar Todos</button>
+    </form>
+  </div>
+</div>
+<div class="col-lg-4 col-md-6 col-sm-12" ng-repeat="usuarioFeed in usuarios">
+  <contato usuario="usuarioFeed"></contato>
+</div>
+<div class="flex-row col-lg-12 col-md-12" style="justify-content:center">
+  <span class="glyphicon glyphicon-chevron-left page-icon" ng-click="buscarContatosPaginaAnterior(usuario.id)" ng-if="!conferirPrimeiraPagina()"></span>
+  <h4>Trocar de Pagina</h4>
+  <span class="glyphicon glyphicon-chevron-right page-icon" ng-click="buscarContatosProximaPagina(usuario.id)" ng-if="!conferirUltimaPagina()"></span>
+</div>

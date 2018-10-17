@@ -1,0 +1,36 @@
+<div class="container">
+  <div class="row form-basic">
+    <div class="col-sm-6 head-form">
+      <h1 class="form-main-title">Login</h1>
+    </div>
+    <div class="col-sm-6 form-body">
+      <div>
+        <p>
+          Favor, inserir os dados de login para entrar.
+        </p>
+      </div>
+      <form novalidate name="formLogin" ng-submit="login(usuario)">
+
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input ng-model="usuario.email" type="text" class="form-control" name="email" required>
+        </div>
+
+        <div class="form-group">
+          <label for="senha">Senha</label>
+          <input ng-model="usuario.senha" type="password" class="form-control" name="senha" required>
+        </div>
+        <div ng-show="formLogin.$submitted">
+          <p class="error-message" ng-show="formLogin.email.$error.required">
+            Campo Login deve ser informado
+          </p>
+          <p class="error-message" ng-show="formLogin.senha.$error.required">
+            Campo Senha deve ser informado
+          </p>
+        </div>
+        <button class="btn btn-primary">Entrar</button>
+        <a class="btn btn-success" href="#!/cadastro">Cadastrar-se</a>
+      </form>
+    </div>
+  </div>
+</div>

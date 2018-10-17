@@ -1,0 +1,35 @@
+.post{
+  color: #085764;
+  font-family: 'Raleway', sans-serif;
+  text-shadow: 0px 0px;
+}
+
+.post-comentarios{
+  border-top: 1px solid grey;
+}
+
+.post-comentario{
+  border-bottom: 1px dashed grey;
+}
+
+.post-comentario > div{
+  margin-bottom: 10px;
+}
+
+.post-comentario > div> h4{
+  margin-left: 10px;
+  padding-top: 5%;
+}
+
+.post-text{
+  font-size: 20px;
+}
+
+.comentario-textarea{
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.comentario-textarea + button{
+  float: right;
+}

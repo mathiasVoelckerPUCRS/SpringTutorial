@@ -1,0 +1,117 @@
+.perfil-usuario-basic{
+  margin: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #085764;
+}
+
+.foto-perfil{
+  border-radius: 20px;
+  margin: 20px;
+  height: 150px;
+  max-width: 200px;
+}
+
+.nome-perfil{
+  font-family: 'Raleway', sans-serif;
+  font-weight: bold;
+  font-size: 30px;
+  font-weight: bold;
+  display: inline-block;
+}
+
+.descricao-perfil{
+  font-family: 'Raleway', sans-serif;
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.descricao-perfil > div{
+  margin-top: 10px;
+}
+
+.competencias-perfil{
+  margin-bottom: 20px;
+}
+
+.competencias-perfil > h3{
+  font-family: 'Raleway', sans-serif;
+  font-weight: bold;
+  font-size: 25px;
+}
+
+.competencia{
+  width: 100%;
+  padding-bottom: 10px;
+  border-bottom: 1px solid grey;
+  display: flex !important;
+  flex-direction: column;
+  font-family: 'Raleway', sans-serif;
+  font-size: 20px;
+}
+
+.solicitacao{
+  width: 100%;
+  padding-bottom: 10px;
+  border-bottom: 1px solid grey;
+  display: flex !important;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'Raleway', sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  display: inline-block;
+}
+
+.foto-solicitacao{
+  margin: 5px;
+  border: 1px solid #e2e1da;
+  border-radius: 50%;
+  height: 75px;
+}
+
+.postagens-basic{
+  margin: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.postagem-form{
+  color: white;
+  font-family: 'Raleway', sans-serif;
+  font-weight: bolder;
+  font-size: 30px;
+  text-shadow: 2px 2px black;
+}
+
+.postagem-textarea{
+  font-size: 18px;
+  margin-bottom: 20px;
+  height: 150px;
+  width: 100%;
+  color: #085764;
+  padding: 5px;
+}
+
+.postagem-textarea+button{
+  float: right;
+  font-size: 20px;
+  font-weight: bolder;
+}
+
+.postagem-form > label{
+  font-size: 20px;
+  text-shadow: 2px 2px white;
+  color: #085764;
+}
+
+.page-icon{
+  font-size: 30px;
+  color: #085764;
+}

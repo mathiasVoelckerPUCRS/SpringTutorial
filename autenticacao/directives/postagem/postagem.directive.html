@@ -1,0 +1,36 @@
+<div class="col-lg-12 flex-row">
+  <div class="main-body post">
+    <div class="flex-row" style="justify-content: space-between; align-itens: center;">
+      <div class="flex-row">
+        <img src="{{post.usuario.url_imagem_perfil}}" class="foto-solicitacao"/>
+        <h2>{{post.usuario.login}}</h2>
+      </div>
+      <span>{{data}}</span>
+    </div>
+    <p class="post-text">{{post.descricao}}</p>
+    <p>
+      {{numCurtidas}} curtidas
+      <label for="curtida-checkbox{{post.id}}" ng-if="!curtida" class="glyphicon glyphicon-thumbs-up"  ng-click="curtir()"> </label>
+      <label for="curtida-checkbox{{post.id}}" ng-if="curtida" class="glyphicon glyphicon-thumbs-down" ng-click="descurtir()"></label>
+      <input id="curtida-checkbox{{post.id}}" ng-model="curtida" name="curtida-checkbox" type="checkbox" class="hidden" />
+    </p>
+    <div class="post-comentarios">
+      <h4>Comentarios</h4>
+      <ul ng-repeat="comentarioFeed in comentarios">
+        <li class="post-comentario">
+          <div class="flex-row">
+            <img src="{{comentarioFeed.usuario.url_imagem_perfil}}" class="foto-solicitacao"/>
+            <h4>{{comentarioFeed.usuario.login}}</h4>
+          </div>
+          <p class="post-text">
+            {{comentarioFeed.descricao}}
+          </p>
+        </li>
+      </ul>
+      <form novalidate name="formCadastro" ng-submit="comentarPostagem(comentario)">
+        <textarea ng-model="comentario.descricao" type="text" class="form-control comentario-textarea" name="descricao" placeholder="O que voce tem a dizer a respeito..."></textarea>
+        <button class="btn btn-success">Comentar</button>
+      </form>
+    </div>
+  </div>
+</div>

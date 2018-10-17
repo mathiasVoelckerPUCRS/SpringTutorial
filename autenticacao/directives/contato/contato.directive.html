@@ -1,0 +1,14 @@
+<div class="contato-body">
+  <div class="flex-row">
+    <img src="{{usuario.url_imagem_perfil}}" class="foto-solicitacao"/>
+    <h3><a href="/#!/perfil/{{usuario.id}}">{{usuario.login}}</a></h3>
+  </div>
+  <div ng-if="!proprioUsuario">
+    <div ng-if="!aguardandoResposta && !aguardandoAprovacao">
+      <button class="btn btn-danger" ng-if="isAmigo" ng-click="desfazerAmizade()">Desfazer Amizade</button>
+      <button class="btn btn-primary" ng-if="!isAmigo" ng-click="enviarSolicitacao()">Adicionar como Amigo</button>
+    </div>
+    <span class="contatos-body-message" ng-if="aguardandoResposta">Aguardando Resposta...</span>
+    <button class="btn btn-success" ng-if="aguardandoAprovacao" ng-click="aprovarSolicitacao()" >Aceitar Amizade</button>
+  </div>
+</div>

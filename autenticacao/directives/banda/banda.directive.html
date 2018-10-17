@@ -1,0 +1,25 @@
+<div class="banda-body">
+  <div class="flex-row">
+    <img src="{{banda.url_imagem_perfil}}" class="foto-solicitacao"/>
+    <div class="flex-column" style="flex-grow: 1;">
+      <div class="titulo-banda">
+        <h3>{{banda.titulo}}</h3>
+      </div>
+      <div class="flex-row">
+        <div class="col-lg-4 col-md-4">
+          <h4 class="titulo-membros">Membros:</h4>
+          <ul ng-repeat="membroBanda in banda.usuarios">
+            <li>
+              <spam class="lista-membros-banda">{{membroBanda.login}}</spam>
+            </li>
+          </ul>
+        </div>
+        <div class="col-lg-8 col-md-8">
+          <p class="lista-descricao-banda">
+            {{banda.descricao}}
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,112 @@
+<div class="container">
+  <div class="row form-basic">
+    <div class="col-sm-8 head-form">
+      <h1 class="form-main-title">{{mensagemPrincipal}}</h1>
+    </div>
+    <div class="col-sm-8 form-body">
+      <div>
+        <p>
+          Preencha os campos abaixo para se cadastrar
+        </p>
+      </div>
+      <form novalidate name="formCadastro" ng-submit="cadastrar(usuario)">
+
+        <div class="row">
+          <div class="col-sm-6 form-group">
+            <label for="nome_completo">Nome Completo</label>
+            <input ng-model="usuario.nome_completo" type="text" class="form-control" name="nome_completo" ng-maxlength="255" required>
+          </div>
+
+          <div class="col-sm-6 form-group">
+            <label for="login">Apelido (Login)</label>
+            <input ng-model="usuario.login" type="text" class="form-control" name="login" ng-maxlength="255" required>
+          </div>
+        </div>
+
+        <div class="row" ng-if="!isEdicao">
+          <div class="col-sm-6 form-group" >
+            <label for="email">Email</label>
+            <input ng-model="usuario.email" type="email" class="form-control" name="email" ng-maxlength="255" required>
+          </div>
+
+          <div class="col-sm-6 form-group">
+            <label for="data_nascimento">Data Nascimento</label>
+            <input ng-model="usuario.data_nascimento" type="date" class="form-control" name="data_nascimento" required>
+          </div>
+        </div>
+
+        <div class="row" ng-if="!isEdicao">
+          <div class="col-sm-6 form-group">
+            <label for="senha">Senha</label>
+            <input ng-model="usuario.senha" type="password" class="form-control" name="senha" ng-maxlength="128" required>
+          </div>
+
+          <div class="col-sm-6 form-group">
+            <label for="ConfirmacaoSenha">Confirmar Senha</label>
+            <input ng-model="ConfirmacaoSenha" type="password" class="form-control" name="ConfirmacaoSenha" required>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-sm-6 form-group">
+            <label for="url_imagem">Imagem de Perfil</label>
+            <input ng-model="usuario.url_imagem_perfil" type="text" class="form-control" ng-maxlength="512" name="url_imagem">
+          </div>
+
+          <div class="col-sm-6 form-group">
+            <label for="url_video">Video de Apresentacao</label>
+            <input ng-model="usuario.url_video_perfil" type="text" class="form-control" name="url_video">
+          </div>
+        </div>
+
+
+        <div class="form-group" ng-if="!isEdicao">
+          <label for="descricao">Descricao</label>
+          <textarea ng-model="usuario.descricao" type="text" class="form-control" name="descricao">
+            Insira uma descricao para o seu perfil...
+          </textarea>
+        </div>
+
+        <div ng-show="formCadastro.$submitted">
+          <p class="error-message" ng-show="formCadastro.nome_completo.$error.required">
+            Campo Nome Completo deve ser informado
+          </p>
+          <p class="error-message" ng-show="formCadastro.login.$error.required">
+            Campo Login deve ser informado
+          </p>
+          <p class="error-message" ng-show="formCadastro.email.$error.required">
+            Campo Email deve ser informado
+          </p>
+          <p class="error-message" ng-show="formCadastro.email.$invalid">
+            Email invalido
+          </p>
+          <p class="error-message" ng-show="formCadastro.data_nascimento.$error.required">
+            Campo Data de Nascimento deve ser informado
+          </p>
+          <p class="error-message" ng-show="formCadastro.senha.$error.required">
+            Campo Senha deve ser informado
+          </p>
+          <p class="error-message" ng-show="formCadastro.nome_completo.$error.maxlength">
+            Campo Nome Completo ultrapassa limite de caracteres
+          </p>
+          <p class="error-message" ng-show="formCadastro.login.$error.maxlength">
+            Campo Login ultrapassa limite de caracteres
+          </p>
+          <p class="error-message" ng-show="formCadastro.email.$error.maxlength">
+            Campo Email ultrapassa limite de caracteres
+          </p>
+          <p class="error-message" ng-show="formCadastro.senha.$error.maxlength">
+            Campo Senha ultrapassa limite de caracteres
+          </p>
+          <p class="error-message" ng-show="formCadastro.url_imagem_perfil.$error.maxlength">
+            Campo Imagem Pefil ultrapassa limite de caracteres
+          </p>
+        </div>
+        <p class="error-message" ng-if="usuario.senha != ConfirmacaoSenha">
+          Senha e Confirmação da Senha estão diferentes
+        </p>
+        <button class="btn btn-success">{{botaoTexto}}</button>
+      </form>
+    </div>
+  </div>
+</div>

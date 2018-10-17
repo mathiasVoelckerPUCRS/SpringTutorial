@@ -1,0 +1,2 @@
+insert into usuario (id, login, nome_completo, email, data_nascimento, senha, is_admin)
+values (1, 'admin', 'administrador', 'mathias_V94@hotmail.com', TO_DATE('1994/06/23', 'yyyy/mm/dd'), 'teste', 1);

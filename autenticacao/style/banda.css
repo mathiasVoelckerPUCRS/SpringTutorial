@@ -1,0 +1,71 @@
+.banda-body{
+  background-color: white;
+  width: 100%;
+  margin: 50px 50px 0px;
+  padding: 20px;
+  border-radius: 20px;
+  border: 2px solid #e2e1da;
+  color: #085764;
+}
+
+.banda-body > h3{
+  font-family: 'Raleway', sans-serif;
+  font-size: 30px;
+  text-shadow: 1px 1px #e2e1da;
+  font-weight: bold;
+}
+
+.titulo-banda{
+  border-bottom: 1px solid #e2e1da;
+}
+
+.titulo-banda > h3 {
+  font-family: 'Raleway', sans-serif;
+  font-size: 30px;
+  text-shadow: 1px 1px #e2e1da;
+  font-weight: bold;
+  margin-left: 20px;
+}
+
+.lista-membros-banda{
+  margin: 20px;
+  font-size: 20px;
+  font-family: 'Raleway', sans-serif;
+  text-shadow: 0px 0px #e2e1da;
+  font-weight: normal;
+}
+
+.lista-descricao-banda{
+  margin: 20px;
+  font-size: 20px;
+  font-family: 'Raleway', sans-serif;
+  text-shadow: 0px 0px #e2e1da;
+  font-weight: normal;
+}
+
+.banda-usuario{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.banda-usuario > label{
+  margin-left: 50px;
+  font-weight: normal;
+  font-size: 25px;
+}
+
+.checkbox-usuario:checked ~ label{
+  font-style: italic;
+  color: #E98D42;
+  text-shadow: 1px 1px #e2e1da;
+}
+
+.titulo-membros{
+  margin: 20px;
+  font-size: 20px;
+  font-family: 'Raleway', sans-serif;
+  text-shadow: 0px 0px #e2e1da;
+  color:#E98D42;
+  font-weight: bold;
+}

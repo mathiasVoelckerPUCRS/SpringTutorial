@@ -1,0 +1,23 @@
+<div class="contatos-filtro col-lg-12 col-md-12">
+  <div class="col-lg-4 col-md-4">
+    <div class="postagem-form">
+      <span >Amigos</span>
+      <div class="row">
+        <label>Buscar por Nome</label>
+        <input ng-model="buscaLogin" type="text" class="form-control" name="buscaLogin" placeholder="O que voce esta pensando..."/>
+      </div>
+      <div class="row">
+        <label>Buscar por Email</label>
+        <input ng-model="buscaEmail" type="text" class="form-control" name="buscaEmail" placeholder="O que voce esta pensando..."/>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="col-lg-4 col-md-6 col-sm-12" ng-repeat="usuarioFeed in usuarios | filter: {login:buscaLogin, email:buscaEmail}">
+  <amigo usuario="usuarioFeed"></amigo>
+</div>
+<div class="flex-row col-lg-12 col-md-12" style="justify-content:center">
+  <span class="glyphicon glyphicon-chevron-left page-icon" ng-click="buscarAmigosPaginaAnterior(usuario.id)" ng-if="!conferirPrimeiraPagina()"></span>
+  <h4>Trocar de Pagina</h4>
+  <span class="glyphicon glyphicon-chevron-right page-icon" ng-click="buscarAmigosProximaPagina(usuario.id)" ng-if="!conferirUltimaPagina()"></span>
+</div>

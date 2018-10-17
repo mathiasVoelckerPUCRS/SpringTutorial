@@ -1,0 +1,48 @@
+<div class="row">
+  <!-- PERFIL -->
+  <div class="col-lg-4 col-md-6 col-md-6">
+    <div class="banda-body">
+      <h3>Cadastre sua banda</h3>
+      <form novalidate name="formCadastroBanda" ng-submit="cadastrarBanda(banda)">
+        <div class="form-group">
+          <label for="titulo">Nome da Banda</label>
+          <input ng-model="banda.titulo" type="text" class="form-control" name="titulo" required>
+        </div>
+        <div class="form-group">
+          <label for="descricao">Descricao</label>
+          <textarea ng-model="banda.descricao" type="text" class="form-control" name="descricao" placeholder="Descreva sua banda em poucas palavras...">
+          </textarea>
+        </div>
+        <h3>Convide seus amigos para sua banda</h3>
+        <div ng-repeat="usuario in usuarios">
+          <div class="banda-usuario">
+            <input id="usuario{{usuario.id}}" ng-model="usuario.selected" class="checkbox-usuario hidden" name="usuario{{usuario.id}}" type="checkbox"/>
+            <img for="usuario{{usuario.id}}" class="foto-solicitacao" src="{{usuario.url_imagem_perfil}}"/>
+            <label for="usuario{{usuario.id}}">{{usuario.login}}</label>
+          </div>
+          <p ng-if="usuario.selected">Convidar {{usuario.login}}</p>
+        </div>
+        <div class="flex-row col-lg-12 col-md-12" style="justify-content:center">
+          <span class="glyphicon glyphicon-chevron-left page-icon" ng-click="buscarAmigosPaginaAnterior(usuario.id)" ng-if="!conferirPrimeiraPagina()"></span>
+          <h4>Trocar de Pagina</h4>
+          <span class="glyphicon glyphicon-chevron-right page-icon" ng-click="buscarAmigosProximaPagina(usuario.id)" ng-if="!conferirUltimaPagina()"></span>
+        </div>
+        <div class="form-group">
+          <label for="url_imagem_perfil">Url da imagem da banda</label>
+          <input ng-model="banda.url_imagem_perfil" type="text" class="form-control" name="url_imagem_perfil" required>
+        </div>
+        <button class="btn btn-success">Cadastrar Banda</button>
+      </form>
+    </div>
+  </div>
+
+
+  <div class="col-lg-6 col-md-6 postagens-basic">
+    <div class="list-banda postagem-form">
+      <span>Lista de Bandas</span>
+      <div ng-repeat="banda in bandas">
+        <banda-lista banda="banda"></banda-lista>
+      </div>
+    </div>
+  </div>
+</div>
